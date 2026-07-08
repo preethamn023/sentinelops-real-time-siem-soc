@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Secure Portal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        /* Floating background elements for aesthetics */
+        .circle1 {
+            position: absolute; width: 300px; height: 300px; border-radius: 50%;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            top: -100px; left: -100px; filter: blur(80px); opacity: 0.5;
+        }
+        .circle2 {
+            position: absolute; width: 400px; height: 400px; border-radius: 50%;
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            bottom: -150px; right: -100px; filter: blur(100px); opacity: 0.4;
+        }
+
+        .login-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 50px 40px;
+            width: 350px;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-in-out;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .input-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px 10px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        .input-group input:focus {
+            border-bottom: 2px solid #00f2fe;
+        }
+        .input-group label {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            transition: 0.3s;
+            pointer-events: none;
+        }
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -15px;
+            font-size: 12px;
+            color: #00f2fe;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.5);
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="login-container">
+        <h2>Secure Portal</h2>
+        <form action="/" method="POST">
+            <div class="input-group">
+                <input type="text" name="username" id="username" required>
+                <label for="username">Username / ID</label>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <button type="submit">AUTHENTICATE</button>
+        </form>
+        <div class="footer-text">Protected by SentinelOPS Security</div>
+    </div>
+</body>
+</html>
